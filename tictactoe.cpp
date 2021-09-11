@@ -115,7 +115,8 @@ class board{
 				f(j,3){
 					if(b[i][j]=='_'){
 						b[i][j] = 'X';
-						int possible_score = minimax(depth+1,!is_this_max_turn).first;
+						// int possible_score = minimax(depth+1,!is_this_max_turn).first;
+						int possible_score = minimax_with_ABpruning(depth+1,!is_this_max_turn,alpha,beta).first;
 						if(possible_score>max_value){
 							max_value = possible_score;
 							pos = (i*3) + j;
@@ -139,7 +140,8 @@ class board{
 				f(j,3){
 					if(b[i][j]=='_'){
 						b[i][j] = 'O';
-						int possible_score  = minimax(depth+1,!is_this_max_turn).first;
+						// int possible_score  = minimax(depth+1,!is_this_max_turn).first;
+						int possible_score  = minimax_with_ABpruning(depth+1,!is_this_max_turn,alpha,beta).first;
 						if(possible_score<min_value){
 							min_value = possible_score;
 							pos = (3*i) + j; 

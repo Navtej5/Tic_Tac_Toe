@@ -209,7 +209,7 @@ int main(){
 
 			auto end = chrono::high_resolution_clock::now();
 			auto time_taken = chrono::duration_cast<chrono::nanoseconds>(end-start).count();
-			cout<<"Time taken by computer = "<<fixed<<setprecision(9)<<time_taken*(1e-9)<<" ns and selected "<<best_move.second/3<<" "<<best_move.second%3<<"\n";
+			cout<<"Time taken by computer = "<<fixed<<setprecision(9)<<time_taken*(1e-9)<<" ns and selected "<<(best_move.second/3)+1<<" "<<(best_move.second%3)+1<<"\n";
 			
 			tic->b[best_move.second/3][best_move.second%3] = ai_marker;
 		}
